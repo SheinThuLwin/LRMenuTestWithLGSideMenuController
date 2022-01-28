@@ -1,0 +1,6 @@
+framework module Pods_LRMenuTest_LRMenuTestUITests {
+  umbrella header "Pods-LRMenuTest-LRMenuTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
