@@ -15,13 +15,17 @@ class SlideMenuController: LGSideMenuController{
         let leftMenuVC = LeftMenuVC()
         let rightMenutVC = RightMenuVC()
         
-        rootVC.slideMenuProtocol = self
-        leftMenuVC.menuProtocol = rootVC
-        rightMenutVC.menuProtocol = rootVC
-        
         rootViewController = isNeedNavigationController ? UINavigationController(rootViewController: rootVC) : rootVC
         leftViewController = leftMenuVC
         rightViewController = rightMenutVC
+        
+        setupSlide(rootVC: rootVC, leftMenuVC: leftMenuVC, rightMenutVC: rightMenutVC)
+    }
+    
+    private func setupSlide(rootVC: RootVC, leftMenuVC: LeftMenuVC, rightMenutVC: RightMenuVC){
+        rootVC.slideMenuProtocol = self
+        leftMenuVC.menuProtocol = rootVC
+        rightMenutVC.menuProtocol = rootVC
 
         leftViewPresentationStyle = .slideAboveBlurred
         rightViewPresentationStyle = .slideBelowShifted
